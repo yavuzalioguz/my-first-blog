@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Yavuz blog</title>
+        <title>Yavuz Ali Oguz</title>
     </head>
     <body>
-        <header>
-            <h1><a href="/">Yavuz Blog</a></h1>
-        </header>
+      <header>
+  <h1><a href="/">Yavuz Ali Oguz Blog</a></h1>
+</header>
 
-        <article>
-            <time>published: 10.07.2022, 13:30</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Yanlızım ben çok yanlızım.</p>
-        </article>
+{% for post in posts %}
+  <article>
+      <time>published: {{ post.published_date }}</time>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
+  </article>
+{% endfor %}
 
-        <article>
-            <time>published: 10.07.2022, 13:30</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Buymuş benim alın yazım.</p>
-        </article>
     </body>
 </html>
