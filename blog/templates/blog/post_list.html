@@ -1,3 +1,4 @@
+{% extends 'blog/base.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -17,6 +18,8 @@
       <main class="container">
           <div class="row">
               <div class="col">
+
+                {% block content %}
                   {% for post in posts %}
                       <article class="post">
                           <time class="date">
@@ -26,11 +29,12 @@
                           <p>{{ post.text|linebreaksbr }}</p>
                       </article>
                   {% endfor %}
+            {% endblock %}
               </div>
           </div>
       </main>
 
-            
+
               <header class="page-header">
                   <div class="container">
                       <h1><a href="/">Yavuz Ali Oguz Blog</a></h1>
@@ -38,7 +42,7 @@
               </header>
 
               <article class="post">
-                  <time>published: {{ post.published_date }}</time>
+                  <time>published:14.07.2022  {{ post.published_date }}</time>
                   <h2><a href="">{{ post.title }}</a></h2>
                   <p>{{ post.text|linebreaksbr }}</p>
               </article>
